@@ -21,19 +21,31 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS expenses (
     amount REAL
 )''')
 
+# Table for storing expense records
+
 cursor.execute('''CREATE TABLE IF NOT EXISTS income (
     id INTEGER PRIMARY KEY,
     income_name TEXT,
     category TEXT,
     amount REAL
 )''')
+# Table for storing income records
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS budgets (
     category TEXT PRIMARY KEY,
     budget_limit REAL
 )''')
+# Table for storing budget limits per category
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS goals (
+    id INTEGER PRIMARY KEY,
+    description TEXT,
+    target REAL,
+    progress REAL DEFAULT 0
+)''')
+
+# Table for storing financial goals
+cursor.execute(f'''CREATE TABLE IF NOT EXISTS {GOALS_TABLE} (
     id INTEGER PRIMARY KEY,
     description TEXT,
     target REAL,

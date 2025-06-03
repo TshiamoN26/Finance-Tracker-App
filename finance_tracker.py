@@ -4,6 +4,11 @@
 
 import sqlite3
 
+EXPENSES_TABLE = "expenses"
+INCOME_TABLE = "income"
+BUDGETS_TABLE = "budgets"
+GOALS_TABLE = "goals"
+
 # Connect to SQLite database
 conn = sqlite3.connect("finance_tracker.db")
 cursor = conn.cursor()
